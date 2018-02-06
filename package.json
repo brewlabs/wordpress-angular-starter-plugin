@@ -5,9 +5,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "dev": "ng build --extract-css --vendor-chunk  --output-hashing none --watch",
-    "build": "ng build --prod --extract-css --aot --vendor-chunk  --output-hashing none",
-    "watch": "ng build --prod --extract-css --aot --vendor-chunk  --output-hashing none --watch",
+    "dev": "ng build --extract-css --vendor-chunk --output-path dev --output-hashing none --watch ",
+    "build": "ng build --extract-css --vendor-chunk --output-path dev --output-hashing none --watch ",
+    "release": "ng build --prod --extract-css --aot --output-path release --vendor-chunk  --output-hashing none",
+    "watch": "npm run dev",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
