@@ -10,9 +10,10 @@
  * Text Domain: js-app-plugin
  */
 
-define( 'JS_APP_DIR', plugin_dir_path( __FILE__ ) );
-define( 'JS_APP_URL', plugin_dir_url( __FILE__ ) );
-define( 'PLUGIN_VERSION', '0.1' );
+
+define( 'YOUR_NAME_HERE_JS_APP_DIR', plugin_dir_path( __FILE__ ) );
+define( 'YOUR_NAME_HERE_JS_APP_URL', plugin_dir_url( __FILE__ ) );
+define( 'YOUR_NAME_HERE_PLUGIN_VERSION', '0.1' );
 
 
 
