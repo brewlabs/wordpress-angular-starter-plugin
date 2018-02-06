@@ -26,7 +26,7 @@ class admin_js_app_page {
       justify-content: center;
       height: 100%;
     }
-    .app-loading .spinner {
+    .app-loading .apploader {
       height: 200px;
       width: 200px;
       animation: rotate 2s linear infinite;
@@ -38,7 +38,7 @@ class admin_js_app_page {
       right: 0;
       margin: auto;
     }
-    .app-loading .spinner .path {
+    .app-loading .apploader .path {
       stroke-dasharray: 1, 200;
       stroke-dashoffset: 0;
       animation: dash 1.5s ease-in-out infinite;
@@ -67,7 +67,7 @@ class admin_js_app_page {
   </style>
   <app-root>  <div class="app-loading">
       <div class="logo"></div>
-      <svg class="spinner" viewBox="25 25 50 50">
+      <svg class="apploader" viewBox="25 25 50 50">
         <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
       </svg>
     </div></app-root>
