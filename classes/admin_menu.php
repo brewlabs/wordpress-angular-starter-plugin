@@ -1,5 +1,6 @@
 <?php
 
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 class admin_js_app_page {
 
@@ -65,7 +66,7 @@ class admin_js_app_page {
       }
     }
   </style>
-  <app-root>  <div class="app-loading">
+  <app-root><br><br><br><br><div class="app-loading">
       <div class="logo"></div>
       <svg class="apploader" viewBox="25 25 50 50">
         <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>

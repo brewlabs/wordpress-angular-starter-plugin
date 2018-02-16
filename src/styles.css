@@ -1,2 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.jp-masthead {
+    background-color: #fff;
+    text-align: center;
+    box-shadow: 0 1px 0 rgba(200,215,225,0.5), 0 1px 2px #e9eff3;
+}
+
+.jetpack-pagestyles #wpcontent {
+    padding-left: 0;
+}
+.jp-masthead__inside-container {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 45rem;
+    padding-bottom: .375rem;
+}

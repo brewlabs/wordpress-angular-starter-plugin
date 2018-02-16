@@ -16,27 +16,17 @@ define( 'YOUR_NAME_HERE_JS_APP_URL', plugin_dir_url( __FILE__ ) );
 define( 'YOUR_NAME_HERE_PLUGIN_VERSION', '0.1' );
 
 
+require_once 'classes/admin_menu.php';
+require_once 'classes/admin_js.php';
+require_once 'classes/admin-api-loader.php';
 
-require_once 'includes/cpt.php';
-require_once 'includes/admin_menu.php';
-require_once 'includes/admin_js.php';
-require_once 'includes/admin_custom_api.php';
 
 class admin_js_app {
 
     function __construct() {
 
         //Create CPT & Content
-        $this->book_cpt = new js_app_book_cpt();
-
-    }
-
-    function create_cpt() {
-        $this->book_cpt->create_cpt();
-    }
-
-    function create_book_content() {
-        $this->book_cpt->create_book_content();
+        
     }
 
     function rest_support() {
@@ -57,15 +47,7 @@ class admin_js_app {
 
     }
 
-    function custom_api() {
-        $api = new admin_js_app_api();
-        $api->register();
-    }
-
-    function custom_api_fields() {
-        $api = new admin_js_app_api();
-        $api->register_custom_fields();
-    }
+   
 
     function admin_menu() {
         $menu = new admin_js_app_page();
@@ -85,28 +67,12 @@ class admin_js_app {
 }
 
 $js_app = new admin_js_app();
-
-/*
- * SAMPLE: Create CPT and Fake Content
- */
-add_action( 'init', array( $js_app, 'create_cpt' ) );
-add_action( 'init', array( $js_app, 'create_book_content' ) );
-
-/*
- * ADD REST Support to Custom Post Type
- */
-add_action( 'init', array( $js_app, 'rest_support' ) );
-
-/*
- * CUSTOM API: Custom API Endpoints for our app
- */
-//add_action( 'rest_api_init', array( $js_app, 'custom_api' ) );
-
-/*
- * CUSTOM API: Custom API Fields
- */
-
-add_action( 'rest_api_init', array( $js_app, 'custom_api_fields' ) );
+$api = new Admin_Api_Loader();
+add_filter('admin_body_class', 'add_body_classes');
+function add_body_classes($classes) {
+        
+        return $classes .  ' jetpack-pagestyles ';
+}
 
 /*
  * ADMIN PAGE: Register and Create the Admin Page
