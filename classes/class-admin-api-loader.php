@@ -2,11 +2,23 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-require_once YOUR_NAME_HERE_JS_APP_DIR. 'classes/api/v1/class-admin-rest-base-v1.php';
-require_once YOUR_NAME_HERE_JS_APP_DIR. 'classes/api/v1/class-admin-rest-translate-v1-controller.php';
+require_once YOUR_NAME_HERE__PLUGIN_DIR . 'classes/api/v1/class-admin-rest-base-v1.php';
+require_once YOUR_NAME_HERE__PLUGIN_DIR . 'classes/api/v1/class-admin-rest-translate-v1-controller.php';
 
 
 class Admin_Api_Loader {
+
+    /**
+    * @var Admin_Api_Loader
+    **/
+    private static $instance = null;
+
+    static function init() {
+        if ( is_null( self::$instance ) ) {
+            self::$instance = new Admin_Api_Loader;
+        }
+        return self::$instance;
+    }
 
     public function __construct() {
         // WP REST API.
@@ -42,3 +54,5 @@ class Admin_Api_Loader {
     }
     
 }
+
+Admin_Api_Loader::init();
